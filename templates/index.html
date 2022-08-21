@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  
+  <head>
+
+    <meta charset="UTF-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+<script language=javascript>
+    var rev = "fwd";
+    function titlebar(val){
+        var msg  = "Change me";         
+        var res = " ";
+        var speed = 100;
+        var pos = val;
+        msg = "🚀"+msg+"🚀";
+        var le = msg.length;
+        if(rev == "fwd"){
+            if(pos < le){
+                pos = pos+1;
+                scroll = msg.substr(0,pos);
+                document.title = scroll;
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+            else {
+                rev = "bwd";
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+        }
+        else {
+            if(pos > 0) {
+                pos = pos-1;
+                var ale = le-pos;
+                scrol = msg.substr(ale,le);
+                document.title = scrol;
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+            else {
+                rev = "fwd";
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+        }
+    }
+    titlebar(0);
+</script>
+    <title></title>  
+    
+    <style>
+    h1 {text-align: center;}
+    p {text-align: center;}
+    div {text-align: center;}
+    
+    .click{
+        cursor: pointer;
+    }
+
+    </style>
+  </head>
+  
+  <body>
+    
+    <div class="block glow">
+      <h1><a style="text-decoration: none;" class="rainbow" >Simple Flask Website</a></h1>
+      <p1><a style="text-decoration: none; left: 500%;" class="rainbow" ><br>&nbsp</br></a></p1>
+      <p1><a style="text-decoration: none; left: 500%;" class="rainbow" ><br>&nbsp</br></a></p1>
+      <p1><a href="/aboutme" style="text-decoration: none; left: 500%;" class="rainbow click" >About Me example</a></p1> 
+    </div>    
+  
+  </body>
+
+</html>
+

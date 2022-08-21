@@ -1,0 +1,187 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: Roboto;
+  background: rgb(20, 19, 19);
+}
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25%;
+  text-align: center;
+  opacity: 0.6;
+  text-shadow: black;
+  cursor: default;
+}
+@media only screen and (min-width: 500px) {
+  h1 {
+    align-items: center;
+  }
+}
+.block {
+  position: relative;
+  width: 99%;
+  height: 97.5vh;
+  bottom: 8px;
+  margin: 0% auto;
+  background: url(/static/img/black_background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.glow::before,
+.glow::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(
+    -45deg,
+    #6666ff,
+    #0099ff,
+    #00ff00,
+    #ff3399,
+    #6666ff
+  );
+  background-size: 400%;
+  height: calc(100% + 5px);
+  width: calc(100% + 5px);
+  z-index: -1;
+  animation: change 40s linear infinite;
+}
+
+@keyframes change{
+   0%{
+      background-position: 0 0;
+   }
+   50%{
+      background-position: 400% 0;
+   }
+   100%{
+      background-position: 0 0;
+   }
+}
+
+.glow::after{
+   filter: blur(10px);
+}
+
+.glow1::before,
+.glow1::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(
+    -45deg,
+    #15B6DE,
+    #15A1DE,
+    #3181E1,
+    #2E4FE5,
+    #1E0BFF
+  );
+  background-size: 400%;
+  height: calc(100% + 5px);
+  width: calc(100% + 5px);
+  z-index: -1;
+  animation: change 40s linear infinite;
+}
+
+.glow1::after{
+   filter: blur(10px);
+}
+
+.rainbow {
+  text-align: center;
+  font-size: 32px;
+  font-family: monospace;
+  letter-spacing: 5px;
+  animation: colorRotate 3s linear 0s infinite;
+  cursor: default;
+}
+
+.blue {
+  text-align: center;
+  font-size: 32px;
+  font-family: monospace;
+  letter-spacing: 5px;
+  animation: colorRotate2 3s linear 0s infinite;
+}
+
+.btn {
+  border: 2px solid black;
+  background-color: white;
+  text-align: center;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  animation: colorRotate 3s linear 0s infinite;
+}
+
+
+@keyframes colorRotate {
+  from {
+    color: #6666ff;
+  }
+  10% {
+    color: #0099ff;
+  }
+  50% {
+    color: #00ff00;
+  }
+  75% {
+    color: #ff3399;
+  }
+  100% {
+    color: #6666ff;
+  }
+}
+
+@keyframes colorRotate2 {
+  from {
+    color: #15B6DE;
+  }
+  10% {
+    color: #15A1DE;
+  }
+  50% {
+    color: #3181E1;
+  }
+  75% {
+    color: #2E4FE5;
+  }
+  100% {
+    color: #1E0BFF;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  text-align: center;
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  border-collapse: collapse;
+}
+
+img {
+  border: 5px solid #FF0000;
+}
+
+.rain::after{
+  filter: blur(10px);
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  
+  <head>
+
+    <title>About Me!</title>  
+
+    <meta charset="UTF-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+<script type="text/javascript">
+
+function MovingTitle(writeText, interval, visibleLetters) {
+    var _instance = {};
+
+    var _currId = 0;
+    var _numberOfLetters = writeText.length;
+
+    function updateTitle() {
+        _currId += 1;
+        if(_currId > _numberOfLetters - 1) {
+            _currId = 0; 
+        }
+
+        var startId = _currId;
+        var endId = startId + visibleLetters;
+        var finalText;
+        if(endId < _numberOfLetters - 1) {
+            finalText = writeText.substring(startId, endId);
+        } else {
+            var cappedEndId = _numberOfLetters;
+            endId = endId - cappedEndId;
+
+            finalText = writeText.substring(startId, cappedEndId) +     writeText.substring(0, endId);
+        }
+
+        document.title = finalText; 
+    }
+
+    _instance.init = function() {
+        setInterval(updateTitle, interval);
+    };
+
+    return _instance;
+}
+
+var title = new MovingTitle("  About Me!  ", 300, 10);
+title.init();
+
+</script>
+    
+    
+
+    <style>
+    h1 {text-align: center;}
+    p {text-align: center;}
+    div {text-align: center;}
+    
+    .click{
+        cursor: pointer;
+    }
+
+    </style>
+  </head>
+  
+  <body>
+    
+    <div class="block glow">
+      <h1><a style="text-decoration: none;" class="rainbow" >About</a></h1>
+      <p1><a style="text-decoration: none; left: 500%;" class="rainbow" >Simple About me page</a></p1> 
+    </div>    
+  
+  </body>
+
+</html>
+
