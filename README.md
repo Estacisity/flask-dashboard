@@ -54,7 +54,7 @@ _Install the Project as shown below._
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Estacisity/flask-dashboard.git
+   git clone https://github.com/JacobLAllen/flask-dashboard.git
    ```
 3. Install Python packages
    ```sh
